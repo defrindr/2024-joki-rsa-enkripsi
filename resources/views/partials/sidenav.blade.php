@@ -3,8 +3,8 @@
     <div class="logo-box">
         <!-- Brand Logo Light -->
         <a href="index.html" class="logo-light">
-            <img src="{{ asset("assets/images/logo.png")}}" alt="logo" class="logo-lg" height="28">
-            <img src="{{ asset("assets/images/icon.png")}}" alt="small logo" class="logo-sm" height="28">
+            <img src="{{ asset('assets/images/logo.png') }}" alt="logo" class="logo-lg" height="28">
+            <img src="{{ asset('assets/images/icon.png') }}" alt="small logo" class="logo-sm" height="28">
         </a>
 
         <!-- Brand Logo Dark -->
@@ -28,12 +28,12 @@
                 </a>
             </li>
             <li class="menu-item">
-                <a href="{{ route('pelanggan.view_pelanggan')}}" class="menu-link waves-effect waves-light">
+                <a href="{{ route('pelanggan.index') }}" class="menu-link waves-effect waves-light">
                     <span class="menu-icon"><i class="bx bx-group"></i></span>
                     <span class="menu-text"> Pelanggan </span>
                 </a>
             </li>
-            <li class="menu-item">
+            {{-- <li class="menu-item">
                 <a href="index.html" class="menu-link waves-effect waves-light">
                     <span class="menu-icon"><i class="bx bx-store"></i></span>
                     <span class="menu-text"> Penjualan </span>
@@ -44,19 +44,25 @@
                     <span class="menu-icon"><i class="bx bx-transfer"></i></span>
                     <span class="menu-text"> Transaksi Penjualan </span>
                 </a>
-            </li>
+            </li> --}}
             <li class="menu-item">
-                <a href="index.html" class="menu-link waves-effect waves-light">
+                <a href="{{ route('produk.index') }}" class="menu-link waves-effect waves-light">
                     <span class="menu-icon"><i class="bx bx-package"></i></span>
                     <span class="menu-text"> Produk </span>
                 </a>
             </li>
             <li class="menu-item">
+                <a href="{{ route('penjualan.index') }}" class="menu-link waves-effect waves-light">
+                    <span class="menu-icon"><i class="bx bx-package"></i></span>
+                    <span class="menu-text"> Penjualan </span>
+                </a>
+            </li>
+            {{-- <li class="menu-item">
                 <a href="#menuMaps" data-bs-toggle="collapse" class="menu-link waves-effect waves-light">
                     <span class="menu-icon"><i class="bx bx-map-alt"></i></span>
                     <span class="menu-text"> Rute </span>
                 </a>
-            </li>
+            </li> --}}
         </ul>
     </div>
 </div>

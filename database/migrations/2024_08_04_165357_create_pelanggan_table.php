@@ -14,9 +14,12 @@ class CreatePelangganTable extends Migration
     public function up()
     {
         Schema::create('pelanggan', function (Blueprint $table) {
-            $table->increments('id_pelanggan');
-            $table->string('nama_pelanggan', 100);
-            $table->string('alamat_pelanggan');
+            $table->id();
+            $table->text('kode');
+            $table->text('nama');
+            $table->text('alamat');
+            $table->text('no_telp');
+            $table->timestamps();
         });
     }
 

@@ -5,7 +5,7 @@
         <div class="col-md-12 mt-2">
             <div class="card">
                 <div class="card-header">
-                    <a href="{{ route('pelanggan.create') }}" class="btn btn-primary">
+                    <a href="{{ route('produk.create') }}" class="btn btn-primary">
                         Tambah
                     </a>
                 </div>
@@ -15,8 +15,8 @@
                             <tr>
                                 <td>Kode</td>
                                 <td>Nama</td>
-                                <td>Alamat</td>
-                                <td>No Telp</td>
+                                <td>Harga</td>
+                                <td>Stok</td>
                                 <td>Aksi</td>
                             </tr>
                         </thead>
@@ -30,13 +30,13 @@
                                 <tr>
                                     <td>{{ $item->kode }}</td>
                                     <td>{{ $item->nama }}</td>
-                                    <td>{{ $item->alamat }}</td>
-                                    <td>{{ $item->no_telp }}</td>
+                                    <td>{{ $item->harga }}</td>
+                                    <td>{{ $item->stok }}</td>
                                     <td>
-                                        <a href="{{ route('pelanggan.edit', $item) }}" class="btn btn-warning">
+                                        <a href="{{ route('produk.edit', $item) }}" class="btn btn-warning">
                                             Edit
                                         </a>
-                                        <form action="{{ route('pelanggan.destroy', $item) }}" method="POST"
+                                        <form action="{{ route('produk.destroy', $item) }}" method="POST"
                                             onsubmit="return confirm('Yakin ?')" class="d-inline-block">
                                             @csrf
                                             @method('DELETE')

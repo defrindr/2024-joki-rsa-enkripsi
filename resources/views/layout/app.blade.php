@@ -31,13 +31,13 @@
                     <div class="py-3 py-lg-4">
                         <div class="row">
                             <div class="col-lg-6">
-                                <h2 class="page-title mb-0">Dashboard</h2>
+                                <h2 class="page-title mb-0">{{ $title ?? '' }}</h2>
                             </div>
                             <div class="col-lg-6">
                                 <div class="d-none d-lg-block">
                                     <ol class="breadcrumb m-0 float-end">
-                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Tables</a></li>
-                                        <li class="breadcrumb-item active">Datatables</li>
+                                        {{-- <li class="breadcrumb-item"><a href="javascript: void(0);">Tables</a></li> --}}
+                                        {{-- <li class="breadcrumb-item active">{{ $title }}</li> --}}
                                     </ol>
                                 </div>
                             </div>

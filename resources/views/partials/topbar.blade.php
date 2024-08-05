@@ -38,7 +38,8 @@
             </li>
 
             <li class="dropdown">
-                <a class="nav-link dropdown-toggle nav-user me-0 waves-effect waves-light" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                <a class="nav-link dropdown-toggle nav-user me-0 waves-effect waves-light" data-bs-toggle="dropdown"
+                    href="#" role="button" aria-haspopup="false" aria-expanded="false">
                     <img src="assets/images/users/avatar-4.jpg" alt="user-image" class="rounded-circle">
                 </a>
                 <div class="dropdown-menu dropdown-menu-end profile-dropdown ">
@@ -68,14 +69,18 @@
                     <div class="dropdown-divider"></div>
 
                     <!-- item-->
-                    <a href="{{route('login')}}" class="dropdown-item notify-item">
-                        <i class="fe-log-out"></i>
-                        <span>Logout</span>
-                    </a>
+                    <form action="{{ route('signout') }}" method="POST">
+                        @csrf
+                        @method('POST')
+                        <button class="dropdown-item notify-item">
+                            <i class="fe-log-out"></i>
+                            <span>Logout</span>
+                        </button>
+                    </form>
 
                 </div>
             </li>
-          
+
         </ul>
     </div>
 </div>

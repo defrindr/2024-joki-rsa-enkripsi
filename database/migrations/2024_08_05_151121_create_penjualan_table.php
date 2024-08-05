@@ -14,9 +14,13 @@ class CreatePenjualanTable extends Migration
     public function up()
     {
         Schema::create('penjualan', function (Blueprint $table) {
-            $table->increments('id_penjual');
-            $table->string('nama_penjual', 100);
-            $table->string('lokasi_penjual');
+            $table->id();
+            $table->text('kode');
+            $table->text('tanggal');
+            $table->text('jumlah');
+            $table->foreignId('pelangganId')->references('id')->on('pelanggan');
+            $table->foreignId('produkId')->references('id')->on('produk');
+            $table->timestamps();
         });
     }
 

@@ -2,9 +2,10 @@
 
 use App\Helpers\RSA;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\RSACustomController;
 use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\PelangganController;
+use App\Http\Controllers\PenjualanController;
+use App\Http\Controllers\ProdukController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,16 +25,17 @@ Route::get('/login', [CustomAuthController::class, 'index'])->name('login');
 Route::post('/custom-login', [CustomAuthController::class, 'customLogin'])->name('login.custom');
 Route::get('/registration', [CustomAuthController::class, 'registration'])->name('register-user');
 Route::post('/custom-registration', [CustomAuthController::class, 'customRegistration'])->name('register.custom');
-Route::get('/signout', [CustomAuthController::class, 'signOut'])->name('signout');
+Route::post('/signout', [CustomAuthController::class, 'signOut'])->name('signout');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/dashboard', [CustomAuthController::class, 'dashboard'])->name('dashboard');
+    Route::resource('/pelanggan', PelangganController::class)->except(['show']);
+    Route::resource('/produk', ProdukController::class)->except(['show']);
+    Route::resource('/penjualan', PenjualanController::class)->except(['show']);
 });
 
-// Pelanggan
-Route::controller(PelangganController::class)->group(function () {
-    Route::get('pelanggan', 'view_pelanggan')->name('pelanggan.view_pelanggan');
-    // Route::post('/orders', 'store');
-});
 
-Route::get('home', [HomeController::class, 'index']);
+Route::get('/cari-kunci/{p}/{q}', function ($p, $q) {
+    echo "<pre>";
+    var_dump(RSA::cariKunci($p, $q));
+});

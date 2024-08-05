@@ -54,7 +54,7 @@ class RSA
       $d++;
     }
 
-    return [$n, $e, $d];
+    return ['n' => $n, 'e' => $e, 'd' => $d];
   }
 
   protected static function fpb($a, $b)
