@@ -1,0 +1,9 @@
+- Gunakan php 7.4.1
+- Laravel v8.83.27
+
+untuk membuat skema database, gunakan php migrate:
+php artisan migrate
+
+gunakan seeder juga untuk login awal:
+php artisan db:seed --class=UserSeeder
+
